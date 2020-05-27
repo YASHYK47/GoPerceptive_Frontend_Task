@@ -10,7 +10,7 @@ class App extends Component {
             backgroundColor: "rgb(208, 199, 254)",
             border: "4px solid rgb(0,0,0)",
             borderRadius: "10px",
-            padding: "10px",
+            padding: "0.3em",
             width: "25%",
             marginLeft: "35%",
             fontWeight: "1800",

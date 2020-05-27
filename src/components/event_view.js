@@ -1,10 +1,21 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router";
+import PropTypes from "prop-types";
+
+import { deleteEvent } from "../actions/index";
 
 class ViewEvent extends Component {
-  state = {};
+  static contextTypes = {
+    router: PropTypes.object,
+  };
+  handleDelete = () => {
+    const { title } = this.props.location.state.event;
+    this.props.deleteEvent(title);
+    this.context.router.push("/");
+  };
   render() {
     const { event } = this.props.location.state;
-    console.log(event);
     return (
       <div
         className="ui clearing segment"
@@ -47,9 +58,15 @@ class ViewEvent extends Component {
         >
           {event.description}
         </p>
+        <Link to="/" style={{ margin: "5px" }} className="ui green button">
+          Back
+        </Link>
+        <button to="/" onClick={this.handleDelete} className="ui red button">
+          Delete
+        </button>
       </div>
     );
   }
 }
 
-export default ViewEvent;
+export default connect(null, { deleteEvent })(ViewEvent);
