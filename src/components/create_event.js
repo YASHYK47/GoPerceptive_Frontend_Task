@@ -12,18 +12,13 @@ class CreateEvent extends Component {
   };
 
   onSubmit = (props) => {
-    this.props.createEvent(props).then(() => {
-      this.context.router.push("/");
-    });
+    this.props.createEvent(props);
+    this.context.router.push("/");
   };
 
   renderError({ error, touched }) {
     if (touched && error) {
-      return (
-        <div className="text danger">
-          <div className="header">{error}</div>
-        </div>
-      );
+      return <div className="ui left pointing red basic label">{error}</div>;
     }
   }
 
@@ -102,12 +97,14 @@ function validate(values) {
   if (!values.title) errors.title = "Enter a valid Title";
   if (!values.category) errors.category = "Enter a valid Category";
   if (!values.description) errors.description = "Enter a valid Description";
+
+  return errors;
 }
 
 CreateEvent = connect(null, { createEvent })(CreateEvent);
 
 export default reduxForm({
-  form: "CreateEvent",
+  form: "CreateEventForm",
   fields: ["title", "category", "description"],
   validate,
 })(CreateEvent);
