@@ -1,4 +1,4 @@
-# GoPerceptive-Backend-Internship-Task
+# GoPerceptive-Frontend-Internship-Task
 
 GoPerceptive is an AI powered eCommerce Analytics startup. Through their 3 step process - Acquire, Analyze & Act, GoPerceptive empower multiple Consumer Brands with data-driven competitive intelligence and actionable insights thereby maximizing their potential on different eCommerce channels.
 
