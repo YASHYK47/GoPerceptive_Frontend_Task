@@ -22,3 +22,7 @@ To use this application you need have NodeJs installed in your system. Then clon
                     yarn start
   and the application will be started in few seconds, then head-over to your browser and go to the following url-
 -                   localhost:3000/
+
+This application is also hosted on surge with the following url:-
+
+-                   http://thinkable-beginner.surge.sh/
